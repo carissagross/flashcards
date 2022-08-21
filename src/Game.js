@@ -3,11 +3,15 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Round = require('../src/Round');
 const Turn = require('../src/Turn');
+const Deck = require('../src/Deck');
+const Card = require('../src/Card');
+const { prototype } = require('mocha');
+
 
 
 class Game {
   constructor() {
-    this.newRound;
+    this.currentRound;
   }
 
   printMessage(deck, round) {
@@ -20,21 +24,24 @@ class Game {
   }
 
 
-  currentRound() {
-    this.newRound = new Round(deck)
+  start() {
+    const cards = [];
+
+    prototypeQuestions.forEach(element => {
+      let cardData = new Card(element.id, element.question, element.answers, element.correctAnswer)
+      cards.push(cardData)
+    });
+
+    const deck = new Deck(cards)
+    const round = new Round(deck)
+    this.currentRound = round
+
+    this.printMessage(deck, round)
+    this.printQuestion(round)
+
+    // each card is a new instance of card
+    // iterate over the data, reassign new Card to a variable
   }
-
-  gameStart() {
-    // Creates Cards
-    // Puts Cards in a Deck
-    // Creates a new Round using the Deck
-    // invokes printMessage to display the message in the CLI
-    // invokes printQuestion to kick off our helper functions that allow interaction via the CLI
-
-
-  }
-
-  
 }
 
 module.exports = Game;
