@@ -4,4 +4,7 @@ const Game = require("./src/Game");
 let game = new Game()
 console.log('Your project is running...'); 
 game.start()
+console.time('Game Run Time')
+console.log('Game Run Time')
+
 

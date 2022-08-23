@@ -7,12 +7,13 @@ const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 const Game = require('../src/Game');
 
-let game = new Game();
 
+describe('Game', () => {
 
-describe('Game', function () {
-    it('should create an instance of Round', function() {
-        expect(game.currentRound()).to.be.an.instanceof(Round);
+    it('should create an instance of Round', () => {
+        let game = new Game();
+        game.start()
+        expect(game.currentRound).to.be.an.instanceOf(Round);
     })
-
+   
 });

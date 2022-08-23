@@ -14,16 +14,6 @@ class Game {
     this.currentRound;
   }
 
-  printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
------------------------------------------------------------------------`)
-  }
-
-  printQuestion(round) {
-      util.main(round);
-  }
-
-
   start() {
     const cards = [];
 
@@ -35,13 +25,21 @@ class Game {
     const deck = new Deck(cards)
     const round = new Round(deck)
     this.currentRound = round
-
+   
     this.printMessage(deck, round)
     this.printQuestion(round)
-
-    // each card is a new instance of card
-    // iterate over the data, reassign new Card to a variable
   }
+
+  printMessage(deck, round) {
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+-----------------------------------------------------------------------`)
+  }
+
+  printQuestion(round) {
+      util.main(round);
+  }
+
+ 
 }
 
 module.exports = Game;
