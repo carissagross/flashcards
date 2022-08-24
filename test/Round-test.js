@@ -6,7 +6,7 @@ const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 
-describe('Round', function () {
+describe('Round', () => {
     let turn;
     let deck;
     let round;
@@ -24,34 +24,29 @@ describe('Round', function () {
     round = new Round(deck)
     });
 
-    it('should be a function', function() {
+    it('should be a function', () => {
         expect(Round).to.be.a('function');
     });
 
-    it('should be an instance of Round', function() {
+    it('should be an instance of Round', () => {
         expect(round).to.be.an.instanceof(Round);
     })
 
-    it('should return the current card being played', function() {
+    it('should return the current card being played', () => {
         expect(round.returnCurrentCard()).to.deep.equal(card1)
     });
     
-    it('should create a new instance of Turn when guess is made', function() {
+    it('should create a new instance of Turn when guess is made', () => {
         round.takeTurn('object')
-        // remember to invoke the METHOD!!!!!  otherwise it won't instantiate a new turn!
         expect(round.currentGuess).to.be.an.instanceof(Turn);
     });
-    // a scenario i am CREATING
-    // I want to take a turn and check if the new turn is an instance
-    // In my Round class, this.currentGuess is undefined UNTIL round.takeTurn is invoked!!
-    // Remmeber in mythical creatures, methods were invoked in the test to get the desired result
     
-    it('should update the turn count', function() {
+    it('should update the turn count', () => {
         round.takeTurn('object')
         expect(round.turns).to.equal(1);
     });
 
-    it('should make the next card the current card', function() {
+    it('should make the next card the current card', () => {
         round.takeTurn('array')
         expect(round.returnCurrentCard()).to.equal(card2)
 
@@ -59,16 +54,15 @@ describe('Round', function () {
         expect(round.returnCurrentCard()).to.equal(card3)
     });
 
-    it('should evaluate incorrect guesses', function() {
+    it('should evaluate incorrect guesses', () => {
         round.takeTurn('function')
-        // expect(round.incorrectGuesses).to.equal('function')
         expect(round.incorrectGuesses[0]).to.equal(1);
 
         round.takeTurn('function')
         expect(round.incorrectGuesses[1]).to.equal(2);
     });
 
-    it('should store the card id of incorrect guesses', function() {
+    it('should store the card id of incorrect guesses', () => {
         round.takeTurn('object')
         round.takeTurn('function')
         round.takeTurn('mutator method')
@@ -76,12 +70,12 @@ describe('Round', function () {
         expect(round.incorrectGuesses[0]).to.equal(2)
     });
 
-    it('should give feedback about a correct or incorrect guess', function() {
+    it('should give feedback about a correct or incorrect guess', () => {
         expect(round.takeTurn('object')).to.equal('Correct!')
         expect(round.takeTurn('function')).to.equal('Incorrect!')
     });
 
-    it('should calculate the percent of correct guesses', function() {
+    it('should calculate the percent of correct guesses', () => {
         round.takeTurn('object')
         round.takeTurn('function')
         round.takeTurn('mutator method')
@@ -90,7 +84,7 @@ describe('Round', function () {
         expect(round.calculatePercentCorrect()).to.equal(67)
     });
 
-    it('should have a method that notifies that the round is over', function() {
+    it('should have a method that notifies that the round is over', () => {
         round.takeTurn('object')
         round.takeTurn('function')
         round.takeTurn('mutator method')

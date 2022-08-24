@@ -1,7 +1,4 @@
 const Turn = require('../src/Turn');
-// 'object'
-// 'array'
-// 'mutator method
 
 class Round {
     constructor(deck) {
@@ -27,23 +24,17 @@ class Round {
     }
 
     calculatePercentCorrect() {
-        // 3 questions
-        // 1 incorrect
-        // 2 correct
         const correctAnswers = this.turns - this.incorrectGuesses.length
-        
-        // console.log(correctAnswers)
-        // console.log(this.turns)
-        //correctAnswers = 2
         return (Math.round(correctAnswers / this.turns * 100))
     }
 
     endRound() {
-      //  how do we know that the round has ended?
-        // we can test that the round is over after three turns?
+        console.timeLog('Game Run Time') 
       return console.log (`** Round Over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
     }
-   
 }
+
+
+    
 
 module.exports = Round;
