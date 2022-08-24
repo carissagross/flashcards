@@ -1,71 +1,36 @@
-# FlashCards Starter Kit
+# FlashCards
 
-## Fork This Repo
+## Overview
 
-On the top right corner of this page, click the **Fork** button.
+This Flashcards game allow you to pull up a set of "flash cards" in your terminal and answer questions that are given. It will then let you know if you are correct or incorrect when you answer. When you complete all flash cards it will let you know when the round is over.
 
-## Setup
+## Project Spec
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
-
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
-
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
-
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
-
-```bash
-Your project is running...
-```
-
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+The spec for this project can be found [here](https://frontend.turing.edu/projects/flash-cards.html)
 
 
-## Where to Add Your Code
+## Contributors
+- Carissa Gross
 
-### JavaScript
+## Leaerning Goals
 
-**Create all of your feature code files in the `src` directory.**
+1. Contribute code to an partially constructed object-oriented application
+2. Follow spec/prompts to make a working application
+3. Implement ES6 classes
+4. Write modular, reusable code that follows SRP (Single Responsibility Principle)
+5. Implement a robust testing suite using TDD
 
-We will be using the `module.exports` and `require` syntax to share code across files.
+## Technologies Used
+- Git
+- JavaScript
+- Mocha and Chai
 
-## How to View Your Code in Action
+## Application Features
 
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
+## Set Up
+1. Fork this repo
+2. Clone the reop to your local machine
+3. When in the flashcards directory, to run the game you need to run:
+<code> node index.js </code>
 
 
