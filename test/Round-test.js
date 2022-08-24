@@ -95,6 +95,6 @@ describe('Round', function () {
         round.takeTurn('function')
         round.takeTurn('mutator method')
 
-        // expect(round.endRound()).to.equal('** Round over! ** You answered % of the questions correctly!')
+        // expect(round.endRound()).to.equal('** Round over! ** You answered 67% of the questions correctly!')
     });
 });
