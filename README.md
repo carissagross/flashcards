@@ -27,6 +27,8 @@ The spec for this project can be found [here](https://frontend.turing.edu/projec
 
 ## Application Features
 
+![Aug-25-2022 07-22-15](https://user-images.githubusercontent.com/83977544/186676342-1ce53f56-87fe-49d3-ab33-e296baef5c2e.gif)
+
 ## Set Up
 1. Fork this repo
 2. Clone the reop to your local machine
